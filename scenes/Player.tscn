@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwe4lqu7id78f"]
+
+[ext_resource type="Texture2D" uid="uid://dint54wgquwvl" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_stand.png" id="1_jo40d"]
+[ext_resource type="Texture2D" uid="uid://7vg2j1865jam" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_idle.png" id="2_obovn"]
+[ext_resource type="Texture2D" uid="uid://btcds8l8o3byi" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_walk1.png" id="2_ovnm2"]
+[ext_resource type="Texture2D" uid="uid://ebf2swiga3x5" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_cheer1.png" id="2_t8uej"]
+[ext_resource type="Texture2D" uid="uid://dsdlgggvwlbt5" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_jump.png" id="3_80sm4"]
+[ext_resource type="Texture2D" uid="uid://4wq6uun8gmay" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_walk2.png" id="3_qann8"]
+[ext_resource type="Texture2D" uid="uid://bkvfm77teccqt" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_cheer2.png" id="3_rylr7"]
+[ext_resource type="Texture2D" uid="uid://ckavd12djpprg" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_duck.png" id="4_c6p4c"]
+[ext_resource type="Texture2D" uid="uid://cdks0xam43mnt" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_slide.png" id="5_bn3ak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po1hf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atm3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t8uej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rylr7")
+}],
+"loop": true,
+"name": &"cheer",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_c6p4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c6p4c")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bn3ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bn3ak")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jo40d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_obovn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_80sm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_80sm4")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ovnm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qann8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_jo40d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_po1hf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_atm3v")
+animation = &"dash"
