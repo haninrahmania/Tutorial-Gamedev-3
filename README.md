@@ -1,6 +1,22 @@
 **Nama: Hanin Atina Rahmania NPM: 2106751234 **
 **Kelas: Game Development A **
-**Tutorial 3**
+**Tutorial 3 & 5**
+
+**Tutorial 5 Section**
+
+**Implementasi Animasi**
+>>Saya mengimplementasi animasi pada objek player baru (SecondPlayer) dengan cara membuat animations idle(auto), walk, jump, dash, dan crouch pada SpriteFrames AnimatedSprite2D dan menggunakannya dalam script SecondPlayer dengan menggunakan $AnimatedSprite2D.play("animation_name") sesuai dengan gerakan yang dilakukan player.
+
+**Implementasi Background Music**
+>>Saya menggunakan audio 'Spacey Ambient Track' dari website orangefreesounds.com dengan cara mendownload file audio tersebut, kemudian memasukkannya ke dalam folder assets saya, dan pada root node saya membuat node AudioStreamPlayer2D dan load file audio tersebut pada stream di inspector, kemudian saya centang opsi 'autoplay' pada inspector agar audio ini langsung dimainkan saat level dimulai.
+
+**Implementasi Objek Baru Bersuara**
+>>Saya membuat objek Area2D baru pada root node level bernama Meteor, dan menambahkan node AudioStreamPlayer2D didalamnya, dan load audio file untuk sfx buatan saya sendiri yang saya masukkan ke dalam folder assets. Audio sfx ini berjudul "ouch.wav" dan saya membuat script pada objek meteor ini agar memberikan feedback suara tersebut saat player mengenai objek ini.
+
+**Implementasi Objek Baru Fasilkom Button**
+>>Saya membuat objek Area2D baru bernama FasilkomButton yang jika dikenai oleh player, akan menghilangkan objek meteor yang saya buat sebelumnya. Saya mengimplementasi fungsi ini dengan menggunakan NodePath, dan load path objek meteor untuk dihilangkan dengan queue_free() pada saat player mengenai fasilkombutton.
+
+**Tutorial 3 Section**
 
 **Implementasi crouch**
 >>Saya membuat player bisa crouch saat tombol arrow down ditekan, sehingga pergerakan player ke kanan atau ke kiri menjadi lebih lambat. Player juga hanya bisa crouch saat berada di lantai dan tidak sedang dashing. Pertama saya set variables crouch_speed, dan boolean is_crouching. Kemudian saya membuat crouch logic dimana down arrow key ditekan, player berada di lantai, dan player tidak sedang dashing, boolean is_crouching menjadi true jika ketiga syarat ini terpenuhi. Lalu saya set movement speed player menjadi crouch speed jika sedang crouching.
