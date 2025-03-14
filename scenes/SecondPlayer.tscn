@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://qqdnb6vkqggo"]
+
+[ext_resource type="Texture2D" uid="uid://efim7fkmj37k" path="res://assets/kenney_platformercharacters/Vector/female_vector.svg" id="1_v5pwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvc1d"]
+size = Vector2(36, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57uit"]
+atlas = ExtResource("1_v5pwe")
+region = Rect2(240, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m75jo"]
+atlas = ExtResource("1_v5pwe")
+region = Rect2(80, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivurk"]
+atlas = ExtResource("1_v5pwe")
+region = Rect2(400, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nexjh"]
+atlas = ExtResource("1_v5pwe")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sepbm"]
+atlas = ExtResource("1_v5pwe")
+region = Rect2(80, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjybj"]
+atlas = ExtResource("1_v5pwe")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxq5a"]
+atlas = ExtResource("1_v5pwe")
+region = Rect2(80, 110, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dnjcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57uit")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m75jo")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivurk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nexjh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sepbm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjybj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxq5a")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="SecondPlayer" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 17.5)
+shape = SubResource("RectangleShape2D_wvc1d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dnjcc")
+animation = &"crouch"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]

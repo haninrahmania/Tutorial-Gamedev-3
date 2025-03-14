@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6v3mbnqs5hx"]
+
+[ext_resource type="Texture2D" uid="uid://cirwssqa1y3jv" path="res://assets/fasilkom.png" id="1_1iwou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dh7nk"]
+radius = 73.0069
+
+[node name="FasilkomButton" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dh7nk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1iwou")
